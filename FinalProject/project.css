@@ -1,0 +1,481 @@
+*{
+    margin:0;
+    padding:0;
+} /**universal selector: will be applicable for all the html elements**/
+
+.toprow
+{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/background.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+nav{
+    display:flex;
+    padding:2% 6%;  /**vertical-horizontal**/
+    justify-content: space-between;
+    align-items: center;
+}/**to move the navigation bar from left to right**/
+
+nav img{
+    width:80px;
+
+}/**for logo**/
+
+.menubar{
+    flex:1; /**will occupy all the space in the row**/
+    text-align: right; /**to place the navigation bar horizontally at right side**/
+}
+
+.menubar ul li{
+    list-style: none;
+    display: inline-block; /**will come horizontly**/
+    padding: 8px 12px; /**to add space**/
+    position: relative;
+}/**final step to create menu bar**/
+
+.menubar ul li a{
+   
+    color:white;
+    text-decoration: none;
+    font-size: 13px;    
+}/**to add color **/
+
+.menubar ul li::after{   /** to add content after the text**/
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: lawngreen;
+    display: block;
+    margin: auto;  
+    transition: 0.5s;
+}/**to add hover effeft**/
+
+.menubar ul li:hover::after{
+    width: 100%;
+}/**to show hover effect**/
+
+.uniname{
+    width:90%;
+    color: white;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);/**
+    move me leftwards by 50% of my width, along the x-axis, and
+    move me upwards by 50% of my height, along the y-axis
+    to align it at the center position**/
+    text-align: center;
+}
+
+.uniname h1{
+    font-size: 62px;
+}/**font size of the center headline**/
+
+.uniname p{
+    margin: 10px 0 40px;/**10px from top 0 from left&right and 40px from bottom**/
+    color: white;
+    font-size: 14px; /**font for the center inner text**/
+}
+
+.button{
+    display:inline-block;
+    text-decoration: none;
+    color: white;
+    border:1px solid white;
+    padding: 12px 34px;
+    font-size: 13px;
+    font-weight: bold;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}/** to design visit us to know more button**/
+
+.button:hover{
+    border:1px solid red;
+    background: red ;
+    transition: 1s;
+}/**to add hover effect when mouse cursor is on the button**/
+
+nav .fa{
+    display: none;
+}
+/**To make it responsive**/
+@media(max-width: 700px) {
+    .uniname h1 {
+        font-size: 20px;
+    }
+
+    .menubar ul li {
+        display: block;
+    }
+    .menubar{
+        position: absolute;
+        background: red;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    nav .fa{
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .menubar ul{
+       padding: 30px; 
+    }
+}
+
+/**------------------------------course-------------------------------------**/
+
+.course{
+    width: 80%;
+    margin:auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+h1{
+    font-size: 36px;
+    font-weight: 600;
+}
+
+p{
+    color: black ;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.coursecolm{
+    flex-basis: 31%;
+    background: rgb(197, 230, 165);
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding:20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+h3{
+   text-align: center;
+   font-weight: 600;
+   margin: 10px 0; 
+}
+
+.coursecolm:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+
+@media(max-width:700px){
+    .row{
+        flex-direction: column;
+    }
+}
+
+/*-----------------------------------campus-------------------------------------------*/
+
+.campus{
+    width: 80%;
+    margin:auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.campuscolm{
+    flex-basis: 32% ;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.campuscolm img{
+    width:100%;
+    display: block;
+}
+
+.layer{
+    background:transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+
+.layer:hover{
+    background: rgba(112, 47, 47, 0.342);
+}
+
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: white;
+    font-size: 26px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+
+.layer:hover h3{
+    bottom:49%;
+    opacity:1;
+}
+
+/*----------------------Facilities--------------------------*/
+.facilities{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.facicol{
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+
+.facicol img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+.facicol p{
+    padding:0;
+}
+.facicol h3{
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+/*-------------------Testimonials-----------------------*/
+.testimonials{
+    width: 80%;
+    margin: auto;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.tescol{
+    flex-basis: 44%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    background: #fff3f3;
+    padding:25px;
+    cursor: pointer;
+    display: flex;
+}
+
+.tescol img{
+    height:40px;
+    margin-left: 5px;
+    margin-right: 30px;
+    border-radius: 50%;
+}
+
+.tescol p{
+    padding: 0;
+}
+
+.tescol h3{
+    margin-top: 15px;
+    text-align: left;
+}
+
+@media(max-width:700px){
+    .tescol img{
+        margin-left: 0px;
+        margin-right: 15px;
+    }
+}
+/*-----------------------------Footer---------------------------------*/
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.icons .fa{
+    color: red;
+    margin: 0 13px;
+    cursor:pointer;
+    padding: 18px 0;
+}
+
+.fa-heart-o {
+    color: red;
+}
+/*-------------------About Us Page----------------*/
+.header{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/background.jpg);
+    background-position: center ;
+    background-size: cover;
+    text-align: center;
+    color: white;
+}
+/*
+.header h1{
+    margin-top: 100px;
+    
+}*/
+.aboutus {
+    width: 80%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+
+.aboutcol{
+    flex-basis: 48%;
+    padding: 30px 2px;
+}
+
+.aboutcol img{
+    width: 100%;
+}
+
+.aboutcol h1{
+    padding-top: 0;  
+}
+
+.aboutcol p{
+    padding: 15px 0 25px;
+}
+
+.red-btn{
+    border: 1px solid red;
+    background: transparent;
+    color: red;
+}
+
+.red-btn:hover{
+color: white;
+}
+/*---------------------------contact us page---------------------------*/
+
+.conheader{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/background.jpg);
+    background-position: center ;
+    background-size: cover;
+    text-align: center;
+    color: white;
+}
+
+.contactus{
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(images/banner2.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+
+}
+
+/*.contactus h1{
+    color: white;
+    margin-bottom: 40px;
+    padding: 0;
+}*/
+
+.wrapper{
+    /*position: absolute;
+    top: 50%;
+    left: 50%;*/
+    /*transform: translate(-50%,-50%);*/
+    max-width: 350px;
+    width: 50%;
+    margin: auto;
+    margin-top: 5px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 2px rgba(254,236,164,1); 
+border: 2px solid black;
+  }
+  
+  .wrapper h2{
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #332902;
+  }
+  
+  .wrapper .input_field{
+    margin-bottom: 10px;
+  }
+  
+  .wrapper .input_field input[type="text"],
+  .wrapper textarea{
+    border: 1px solid #e0e0e0;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .wrapper textarea{
+    resize: none;
+    height: 80px;
+  }
+  
+  .wrapper .btn input[type="submit"]{
+    border: 0px;
+    margin-top: 15px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    background: #fece0c;
+    color: #332902;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  
+  #error_message{
+    margin-bottom: 20px;
+    background: #fe8b8e;
+    padding: 0px;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.5s ease;
+  }
+
+
+
+
